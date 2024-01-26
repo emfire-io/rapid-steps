@@ -1,0 +1,9 @@
+{
+  "version": "v1",
+  "packages": {
+    "react-rapid-steps": {
+      "signature": "2767b9425d9c106bb11bbcd304d0b8f5",
+      "file": true
+    }
+  }
+}
