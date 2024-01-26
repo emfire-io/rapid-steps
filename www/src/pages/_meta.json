@@ -10,5 +10,9 @@
   "components": {
     "type": "page",
     "title": "Components"
+  },
+  "blog": {
+    "type": "page",
+    "title": "Blog"
   }
 }
