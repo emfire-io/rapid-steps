@@ -1,0 +1,14 @@
+{
+  "index": {
+    "type": "page",
+    "title": "Home"
+  },
+  "docs": {
+    "type": "page",
+    "title": "Docs"
+  },
+  "components": {
+    "type": "page",
+    "title": "Components"
+  }
+}
