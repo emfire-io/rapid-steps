@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
-import { RapidStepsProvider, RapidStepsWrapper, useRapidStep, useRapidSteps } from "../src";
+import { RapidStepsProvider, RapidStepsWrapper, useRapidStep, useRapidSteps } from "..";
 import { act, renderHook, waitFor } from "@testing-library/react";
 
 const storageProvider = {

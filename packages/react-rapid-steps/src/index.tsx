@@ -8,7 +8,7 @@ import { IRapidStepsStorageProvider } from "./interfaces/IRapidStepsStorageProvi
 import { VersionInvalidator } from "./invalidators/VersionInvalidator";
 import { LocalStorageProvider } from "./providers/LocalStorageProvider";
 import { SessionStorageProvider } from "./providers/SessionStorageProvider";
-import { SimpleCryptoSerializer } from "./serializers/SimpleCryptoSerializer";
+import { SubtleCryptoSerializer } from "./serializers/SubtleCryptoSerializer";
 import useNavigation from "./hooks/useNavigation";
 import useRapidStep from "./hooks/useRapidStep";
 import useStepper from "./hooks/useStepper";
@@ -23,7 +23,7 @@ export {
   useRapidStepsContext,
   LocalStorageProvider,
   SessionStorageProvider,
-  SimpleCryptoSerializer,
+  SubtleCryptoSerializer,
   VersionInvalidator,
   IRapidStepsData,
   IRapidStepsInvalidator,

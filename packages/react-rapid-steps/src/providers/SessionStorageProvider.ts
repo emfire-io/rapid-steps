@@ -14,18 +14,18 @@ export class SessionStorageProvider implements IRapidStepsStorageProvider {
     this.serializer = serializer;
   }
 
-  public save(formState: IRapidStepsData): void {
+  public async save(formState: IRapidStepsData) {
     if (this.serializer) {
-      sessionStorage.setItem(this.storageKey, this.serializer.serialize(formState));
+      sessionStorage.setItem(this.storageKey, await this.serializer.serialize(formState));
       return;
     }
     sessionStorage.setItem(this.storageKey, JSON.stringify(formState));
   }
 
-  public load(): IRapidStepsData | null {
+  public async load() {
     if (this.serializer) {
       const formState = sessionStorage.getItem(this.storageKey);
-      return formState ? this.serializer.deserialize(formState) : null;
+      return formState ? await this.serializer.deserialize(formState) : null;
     }
     const formState = sessionStorage.getItem(this.storageKey);
     return formState ? JSON.parse(formState) : null;

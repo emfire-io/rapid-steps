@@ -1,5 +1,5 @@
-import {act, renderHook} from '@testing-library/react'
-import {IRapidStepsInvalidator, useRapidSteps} from '../src'
+import {act, renderHook, waitFor} from '@testing-library/react'
+import {IRapidStepsInvalidator, useRapidSteps} from '..'
 
 const initialValues = {
   firstName: "",
@@ -89,10 +89,10 @@ test("resets form data", () => {
   expect(result.current.currentStep).toBe(0);
 });
 
-test("invalidates form data", () => {
+test("invalidates form data", async () => {
 
   act(() => {
-    storageProvider.load.mockReturnValue({
+    storageProvider.load.mockResolvedValue({
       values: { key: 'loaded' },
       currentStep: 1,
       version: '1.1.0',
@@ -109,6 +109,8 @@ test("invalidates form data", () => {
     })
   );
 
-  expect(invalidator.shouldInvalidate).toHaveBeenCalled();
+  await waitFor(() => {
+    expect(invalidator.shouldInvalidate).toHaveBeenCalled();
+  });
   expect(result.current.values).toMatchObject(initialValues);
 });

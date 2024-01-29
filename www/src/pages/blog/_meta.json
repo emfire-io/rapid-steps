@@ -1,0 +1,9 @@
+{
+  "first-release": {
+    "theme": {
+      "sidebar": false
+    },
+    "description": "This is article about our First Release!",
+    "date": "January 26th, 2024"
+  }
+}

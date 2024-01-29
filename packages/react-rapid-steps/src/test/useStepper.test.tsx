@@ -1,6 +1,6 @@
 import { act, renderHook, waitFor } from "@testing-library/react";
-import {RapidStepsWrapper, useStepper} from "../src";
-import { LocalStorageProvider, RapidStepsProvider, useRapidSteps } from "../src";
+import {RapidStepsWrapper, useStepper} from "..";
+import { LocalStorageProvider, RapidStepsProvider, useRapidSteps } from "..";
 import React, { ReactElement } from "react";
 
 const initialValues = { name: '' }
