@@ -51,13 +51,14 @@ const useRapidSteps = ({
     })
   }, [setFormData]);
   useEffect(() => {
-    const loadedData = storageProvider.load();
-    if (!loadedData) {
-      storageProvider.save(initialFormData);
-      return;
-    }
-    _setFormData(loadedData);
-    setIsFormDataLoaded(true);
+    storageProvider.load()?.then(loadedData => {
+      if (!loadedData) {
+        storageProvider.save(initialFormData);
+        return;
+      }
+      _setFormData(loadedData);
+      setIsFormDataLoaded(true);
+    })
   }, [initialFormData, storageProvider])
 
   useEffect(() => {

@@ -3,7 +3,7 @@ import Stepper from "../Stepper"
 import FirstStepComponent from "./FirstStepComponent"
 import SecondStepComponent from "./SecondStepComponent"
 import LastStepComponent from "./LastStepComponent"
-import { LocalStorageProvider, RapidStepsWrapper, RapidStepsProvider, useRapidSteps } from "react-rapid-steps"
+import { LocalStorageProvider, RapidStepsWrapper, RapidStepsProvider, useRapidSteps, SubtleCryptoSerializer } from "react-rapid-steps"
 
 const initialValues = {
   firstName: '',
@@ -12,7 +12,10 @@ const initialValues = {
   address2: '',
 }
 
-const storageProvider = new LocalStorageProvider('demo-example')
+const storageProvider = new LocalStorageProvider(
+  'demo-example',
+  new SubtleCryptoSerializer('demo-example'),
+)
 
 const HookFormExample = () => {
   const rapidStepsMethods = useRapidSteps({
